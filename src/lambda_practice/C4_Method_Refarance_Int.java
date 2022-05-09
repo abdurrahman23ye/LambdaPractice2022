@@ -15,15 +15,23 @@ public class C4_Method_Refarance_Int {
     public static void main(String[] args) {
         List<Integer> intL= Arrays.asList(-2,-8,-5,0,2,5,6,7,15,6,8);
 
+        // S1: tekleri aralarinda bir bosluk birakarak yazdiralim
+
+        intL.stream().filter(Utulities::teklerileriDondur).forEach(Utulities::intBoslukluYazdir);
+
+        // S2: ciftlein carpimini bulalim
+
+        System.out.println(intL.stream().filter(Utulities::ciftleriDondur).reduce(Math::multiplyExact));
+
+        // S3: negatiflerin kare toplamlarini  bulalim
+
+        System.out.println(intL.stream().filter(Utulities::negatifleriDondur).map(t -> t*t).reduce(Integer::sum));
+        // S4: poziflerin kuplerinden max yazdiralim
+        System.out.println(intL.stream().filter(Utulities::pozitifleriDondur).
+                map(t -> t*t*t).reduce(Integer::max));
 
     }
-    // S1: tekleri aralarinda bir bosluk birakarak yazdiralim
 
-
-    // S2: ciftlein carpimini bulalim
-
-
-    // S3: negatiflerin kare toplamlarini  bulalim
 
 
     // S4: poziflerin kuplerinden max yazdiralim

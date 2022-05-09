@@ -3,6 +3,7 @@ package lambda_practice;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class C3_Array_StreamOrnekleri {
@@ -16,17 +17,19 @@ public class C3_Array_StreamOrnekleri {
 
         Integer arr1 [] ={1,5,-5,6,12,-8,9,3,4};
 
+        //S1: arrayin elemanlarini bir liste yazdiralim
+
+        Arrays.stream(arr1).forEach(Utulities::intBoslukluYazdir);
+        //S2: Arrayin elemanlarini toplamini bulalim
+        System.out.println(Arrays.stream(arr1).reduce(0, (x, y) -> x + y));
+
+        // S3: Array in elemanlarinin ortalamasini bulalim yazdir
+
+        System.out.println(Arrays.stream(arr1).mapToDouble(Integer::intValue).average());
+
 
     }
-    //S1: arrayin elemanlarini bir liste yazdiralim
 
-
-
-    //S2: Arrayin elemanlarini toplamini bulalim
-
-
-
-    // S3: Array in elemanlarinin ortalamasini bulalim yazdir
 
 
 
